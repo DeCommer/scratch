@@ -1,7 +1,8 @@
 //import java.util.Arrays;
 //import java.util.stream.Collectors;
 
-public class StringReverse {
+public class StringReverse
+{
     public static void main(String[] args)
     {
         String string = "I evol ym !ecnatsnoC";
@@ -10,7 +11,8 @@ public class StringReverse {
 
     public static String reverseStr(String input)
     {
-        if(input.equals("")) {
+        if(input.equals("")) 
+        {
             return "";
         }
         return reverseStr(input.substring(1)) + input.charAt(0);

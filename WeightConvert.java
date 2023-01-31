@@ -3,7 +3,8 @@ import java.text.DecimalFormat;
 
 
 public class WeightConvert {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         
         Scanner input = new Scanner(System.in);
 
@@ -21,13 +22,13 @@ public class WeightConvert {
         System.out.print("Press \'c\' for centimeters, and \'i \'for inches: ");
         String response = input.nextLine();
         
-        if(response.equals("c")) {
+        if(response.equals("c"))
+        {
             System.out.println(height + " in centimeters is: " + f.format(toCentimeters));
-        } else if(response.equals("i")) {
+        } else if(response.equals("i"))
+        {
             System.out.println(height + " in inches is: " + f.format(toInches));
         }
         input.close();
-
-        
     }
 }

@@ -1,7 +1,8 @@
 import java.util.Random;
 import java.util.Arrays;
 
-public class Greed {
+public class Greed 
+{
     /*
      * Greed is a dice game played with five six-sided dice. 
      * Your task is to score a throw according to these rules. 
@@ -22,7 +23,8 @@ public class Greed {
      *  One   5   =>   50 point
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         int[] roll2 = {5, 3, 3, 3, 4}; 
         //int[] roll = randomArray();
@@ -32,26 +34,34 @@ public class Greed {
         System.out.println("Score is: " + greedy(roll2));
         
     }
-    public static int greedy(int[] dice) {
+    public static int greedy(int[] dice) 
+    {
         int res = 0;
         int[] rollArray = new int[7];
         for(int j : dice) rollArray[j]++;
 
-        for(int i = 1; i < rollArray.length; i++) {
-            if(i == 1) { // 1 and 5 are scored different and thus singled out
+        for(int i = 1; i < rollArray.length; i++)
+        {
+            if(i == 1)
+            { // 1 and 5 are scored different and thus singled out
                 res += (rollArray[i] > 2 ? 1000 + (rollArray[1] - 3) * 100: rollArray[1] * 100);
-            }else if (i == 5) { // 5 and 1 are scored different and thus singled out
+            }else if (i == 5)
+            { // 5 and 1 are scored different and thus singled out
                 res += (rollArray[i] > 2 ? 500 + (rollArray[5] - 3) * 50 : rollArray[5] * 50);
-            } else {
+            } else
+            {
                 res += (rollArray[i] > 2 ? i * 100 : 0);
             }
         }
         return res;
     }
-    public static int[] randomArray() {
+    public static int[] randomArray()
+    {
         Random rand = new Random();
         int[] randArr = new int[5];
-        for(int i = 0; i < randArr.length; i++) {
+
+        for(int i = 0; i < randArr.length; i++)
+        {
             randArr[i] = rand.nextInt(1, 6);
         }
         return randArr;
