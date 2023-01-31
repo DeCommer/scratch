@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 
-public class WeightConvert {
+public class HeightConvert {
     public static void main(String[] args) 
     {
         
@@ -12,7 +12,8 @@ public class WeightConvert {
         DecimalFormat f = new DecimalFormat("##.00");
 
         System.out.println("------ Height convertor! ---------");
-        System.out.print("Enter you height: ");
+        System.out.println("Enter you height in either inches or centimeters to convert");
+        System.out.print("For ft enter as decimal. ex: 5' 9 '' = 5.9: ");
         double height = input.nextDouble();
         input.nextLine();
 
