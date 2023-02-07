@@ -6,6 +6,10 @@ public class mathQuiz2 {
       Random random = new Random();
       /*
        *  work in progress
+       * current issues to solve
+       * 1. response when user enters a non-numberic character
+       * 2. 
+       * 
        */
       int num1;
       int num2;
@@ -15,6 +19,7 @@ public class mathQuiz2 {
       int loopNum = 10;
       String response = "";
       Scanner input = new Scanner(System.in);
+      //String[] validate = {"A,a,B,b,C,cD,d,E,e,F,f,G,g,H,h,I,i,J,j,K,k,L,l,M,m,N,n,O,o,P,p,Q,q,R,r,S,s,T,t,U,u,V,v,W,w,X,x,Y,yZ,z"};
 
       for(int questionNum = 1; questionNum <= loopNum; questionNum++){
          num1 = random.nextInt(10);
@@ -22,39 +27,39 @@ public class mathQuiz2 {
          String[] operator = {" + ", " - ", " * ", " / "};
          String randOp = operator[(int) (Math.random() * operator.length)];
          System.out.print("\nQ." + questionNum + ": What is " + num1 + randOp + num2 +"? ");
+         int userAns = input.nextInt();
          
-         double userAns = input.nextDouble();
          if(randOp.equals(" + ")) {
             answer = (int) (num1 + num2);
             if(userAns == answer) {
-               System.out.println("\t" + right(response, random));
+               System.out.print(right(response, random));
                score++;
             } else {
-               System.out.println("\t" + wrong(response, random));
+               System.out.print(wrong(response, random));
             }  
             }else if(randOp.equals(" - ")) {
                answer = (int) (num1 - num2);
                if(userAns == answer) {
-                  System.out.println("\t" + right(response, random));
+                  System.out.print(right(response, random));
                score++;
                } else {
-                  System.out.println("\t" + wrong(response, random));
+                  System.out.print(wrong(response, random));
                }  
             }else if(randOp.equals(" * ")) {
                answer = (int) (num1 * num2);
                if(userAns == answer) {
-                  System.out.println("\t" + right(response, random));
+                  System.out.print(right(response, random));
                score++;
                } else {
-                  System.out.println("\t" + wrong(response, random));
+                  System.out.print(wrong(response, random));
                }  
             }else if(randOp.equals(" / ")) { //imporve division handling
                answer = (int) (num1 / num2);
                if(userAns == answer) {
-                  System.out.println("\t" + right(response, random));
+                  System.out.print(right(response, random));
                score++;
                } else {
-                  System.out.println("\t" + wrong(response, random));
+                  System.out.print(wrong(response, random));
                }  
             }
       }
@@ -77,20 +82,20 @@ public class mathQuiz2 {
 
    public static String wrong(String response, Random random){
       switch(random.nextInt(4) + 1) {
-         case 1: response = " ~~Wrong"; break;
-         case 2: response = " ~~Incorrect"; break;
-         case 3: response = " ~~Nope, not right"; break;
-         case 4: response = " ~~Sorry, wrong"; break;
+         case 1: response = "Wrong"; break;
+         case 2: response = "Incorrect"; break;
+         case 3: response = "Nope, not right"; break;
+         case 4: response = "Sorry, wrong"; break;
       }
       return response;
    }
 
    public static String right(String response, Random random) {
       switch(random.nextInt(4) + 1) {
-         case 1: response = " ~~Right"; break;
-         case 2: response = " ~~Correct"; break;
-         case 3: response = " ~~You got it right"; break;
-         case 4: response = " ~~Great"; break;
+         case 1: response = "Right"; break;
+         case 2: response = "Correct"; break;
+         case 3: response = "You got it right"; break;
+         case 4: response = "Great"; break;
       }
       return response;
    }
