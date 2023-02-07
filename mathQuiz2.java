@@ -3,13 +3,10 @@ import java.util.Random;
 
 public class mathQuiz2 {
     public static void main(String[] args) {
-
       Random random = new Random();
-
       /*
        *  work in progress
        */
-
       int num1;
       int num2;
       int answer;
