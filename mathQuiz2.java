@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.Random;
 
+
+
 public class mathQuiz2 {
     public static void main(String[] args) {
       Random random = new Random();
@@ -8,26 +10,30 @@ public class mathQuiz2 {
        *  work in progress
        * current issues to solve
        * 1. response when user enters a non-numberic character
-       * 2. 
+       * 2. fix division operation
        * 
        */
-      int num1;
-      int num2;
-      int answer;
-      int score = 0;
+      double num1;
+      double num2;
+      double answer;
       double percent = 0;
-      int loopNum = 10;
+      int score = 0;
+      int loopNum = 5;
+
+      
+
       String response = "";
       Scanner input = new Scanner(System.in);
-      //String[] validate = {"A,a,B,b,C,cD,d,E,e,F,f,G,g,H,h,I,i,J,j,K,k,L,l,M,m,N,n,O,o,P,p,Q,q,R,r,S,s,T,t,U,u,V,v,W,w,X,x,Y,yZ,z"};
+      String validate = "A,a,B,b,C,cD,d,E,e,F,f,G,g,H,h,I,i,J,j,K,k,L,l,M,m,N,n,O,o,P,p,Q,q,R,r,S,s,T,t,U,u,V,v,W,w,X,x,Y,yZ,z";
+      String[] spValidate = validate.split(",");
 
       for(int questionNum = 1; questionNum <= loopNum; questionNum++){
-         num1 = random.nextInt(10);
-         num2 = random.nextInt(10);
+         num1 = (int)random.nextInt(10);
+         num2 = (int)random.nextInt(10);
          String[] operator = {" + ", " - ", " * ", " / "};
          String randOp = operator[(int) (Math.random() * operator.length)];
-         System.out.print("\nQ." + questionNum + ": What is " + num1 + randOp + num2 +"? ");
-         int userAns = input.nextInt();
+         System.out.print("\nQ." + questionNum + ": What is " + (int)num1 + randOp + (int)num2 +"? ");
+         double userAns = input.nextDouble();
          
          if(randOp.equals(" + ")) {
             answer = (int) (num1 + num2);
@@ -41,9 +47,11 @@ public class mathQuiz2 {
                answer = (int) (num1 - num2);
                if(userAns == answer) {
                   System.out.print(right(response, random));
+                  System.out.println(", The correct answer is: " + answer);
                score++;
                } else {
                   System.out.print(wrong(response, random));
+                  System.out.println(", The correct answer is: " + answer);
                }  
             }else if(randOp.equals(" * ")) {
                answer = (int) (num1 * num2);
@@ -52,14 +60,18 @@ public class mathQuiz2 {
                score++;
                } else {
                   System.out.print(wrong(response, random));
+                  System.out.println(", The correct answer is: " + answer);
                }  
-            }else if(randOp.equals(" / ")) { //imporve division handling
-               answer = (int) (num1 / num2);
+            }
+            
+            else if(randOp.equals(" / ")) { //improve division handling
+               answer = num1 / num2;
                if(userAns == answer) {
                   System.out.print(right(response, random));
                score++;
                } else {
                   System.out.print(wrong(response, random));
+                  System.out.println(", The correct answer is: " + answer);
                }  
             }
       }
@@ -98,5 +110,10 @@ public class mathQuiz2 {
          case 4: response = "Great"; break;
       }
       return response;
+   }
+
+   public static int div(double num1, double num2) {
+      double divAnswer = num1 / num2;
+      return (int)divAnswer;
    }
 }
