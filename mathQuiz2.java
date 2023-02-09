@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.text.DecimalFormat; 
 
 
 
@@ -10,7 +11,8 @@ public class mathQuiz2 {
        *  work in progress
        * current issues to solve
        * 1. response when user enters a non-numberic character
-       * 2. fix division operation
+       * 2. fix division operation ✅
+       * 3. fix division by 0
        * 
        */
       double num1;
@@ -18,19 +20,18 @@ public class mathQuiz2 {
       double answer;
       double percent = 0;
       int score = 0;
-      int loopNum = 5;
-
-      
-
+      int loopNum = 10;
+      DecimalFormat df = new DecimalFormat("0.00");  
       String response = "";
       Scanner input = new Scanner(System.in);
       String validate = "A,a,B,b,C,cD,d,E,e,F,f,G,g,H,h,I,i,J,j,K,k,L,l,M,m,N,n,O,o,P,p,Q,q,R,r,S,s,T,t,U,u,V,v,W,w,X,x,Y,yZ,z";
       String[] spValidate = validate.split(",");
+      
 
       for(int questionNum = 1; questionNum <= loopNum; questionNum++){
          num1 = (int)random.nextInt(10);
          num2 = (int)random.nextInt(10);
-         String[] operator = {" + ", " - ", " * ", " / "};
+         String[] operator = {" + ", " - ", " * ", " ÷ "};
          String randOp = operator[(int) (Math.random() * operator.length)];
          System.out.print("\nQ." + questionNum + ": What is " + (int)num1 + randOp + (int)num2 +"? ");
          double userAns = input.nextDouble();
@@ -47,31 +48,32 @@ public class mathQuiz2 {
                answer = (int) (num1 - num2);
                if(userAns == answer) {
                   System.out.print(right(response, random));
-                  System.out.println(", The correct answer is: " + answer);
-               score++;
+                  score++;
                } else {
                   System.out.print(wrong(response, random));
-                  System.out.println(", The correct answer is: " + answer);
+                  System.out.println(", The correct answer is: " + (int)answer);
                }  
             }else if(randOp.equals(" * ")) {
-               answer = (int) (num1 * num2);
+               answer =  (int) (num1 * num2);
                if(userAns == answer) {
                   System.out.print(right(response, random));
-               score++;
+                  score++;
                } else {
                   System.out.print(wrong(response, random));
-                  System.out.println(", The correct answer is: " + answer);
+                  System.out.println(", The correct answer is: " + (int)answer);
                }  
             }
             
-            else if(randOp.equals(" / ")) { //improve division handling
-               answer = num1 / num2;
-               if(userAns == answer) {
+            else if(randOp.equals(" ÷ ")) {
+               answer = div(num1, num2);
+               String ans2 = df.format(answer);
+               Double ans3 = Double.parseDouble(ans2);
+               if(userAns == ans3) {
                   System.out.print(right(response, random));
-               score++;
+                  score++;
                } else {
                   System.out.print(wrong(response, random));
-                  System.out.println(", The correct answer is: " + answer);
+                  System.out.println(", The correct answer is: " + ans3);
                }  
             }
       }
@@ -112,8 +114,11 @@ public class mathQuiz2 {
       return response;
    }
 
-   public static int div(double num1, double num2) {
+   public static Double div(double num1, double num2) {
       double divAnswer = num1 / num2;
-      return (int)divAnswer;
+      if(num2 == 0) {
+         divAnswer = 0.0;
+      }
+      return divAnswer;
    }
 }

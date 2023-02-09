@@ -1,12 +1,18 @@
+import java.util.Scanner;
 public class Scratch {
     public static void main(String[] args) {
-        
-        double numerator = 5;
-        double denominator = 7;
 
+        Scanner scanner = new Scanner(System.in);
 
-        double answer = numerator / denominator;
+        System.out.print("Enter a Number only, a letter should result in error: ");
+        double input =  scanner.nextDouble();
 
-        System.out.printf("%.2f",answer);
+        System.out.println("You entered the number " + input);
+
+            if(!scanner.hasNextDouble()){
+                System.out.println("Not a number, try again");
+                input =  scanner.nextDouble();
+            }
+        scanner.close();
     }
 }
