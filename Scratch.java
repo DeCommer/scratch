@@ -1,18 +1,25 @@
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Scratch {
+
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter a Number only, a letter should result in error: ");
-        double input =  scanner.nextDouble();
-
-        System.out.println("You entered the number " + input);
-
-            if(!scanner.hasNextDouble()){
-                System.out.println("Not a number, try again");
-                input =  scanner.nextDouble();
+        boolean tryAgain = true;
+        
+        double answer = 0;
+        while(tryAgain) {
+            try{
+            System.out.println("Enter a number: ");
+            answer = input.nextDouble(); 
+            System.out.println(answer); 
+            tryAgain = false; 
             }
-        scanner.close();
+            catch(InputMismatchException e) {
+                System.out.println("Invalid, try again");
+                input.next();
+            }
+        }
     }
 }
