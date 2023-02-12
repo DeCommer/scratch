@@ -13,7 +13,8 @@ public class mathQuiz2 {
        * 1. response when user enters a non-numberic character ✅
        * 2. fix division operation ✅
        * 3. fix division by 0 ✅
-       * 4. profit?
+       * 4. add got out of ... score
+       * 5. profit?
        * 
        */
       double num1;
@@ -22,11 +23,11 @@ public class mathQuiz2 {
       double percent = 0;
       int score = 0;
       int questionNum = 0;
-      int loopNum = 10; //number of 
+      int loopNum = 10; //number of questions
       DecimalFormat df = new DecimalFormat("0.00");  
       String response = "";
       boolean tryAgain = true;
-      
+
       while(tryAgain) {
          for(questionNum = 1; questionNum <= loopNum; questionNum++){   
             try{
