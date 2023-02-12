@@ -28,6 +28,10 @@ public class mathQuiz2 {
       String response = "";
       boolean tryAgain = true;
 
+      System.out.println("*************************");
+      System.out.println("******* Math Quiz *******");
+      System.out.println("*************************");
+
       while(tryAgain) {
          for(questionNum = 1; questionNum <= loopNum; questionNum++){   
             try{
@@ -115,18 +119,19 @@ public class mathQuiz2 {
    }
    public static void quizEnd(double percent, int score, int loopNum) {
       System.out.println("\n*************************");
-      System.out.print("You scored: ");
+      System.out.println("You got " + score + " out of " + loopNum + " correct");
+      System.out.print("Your score is: " );
       percent = (double)score / (double)loopNum*100;
       System.out.printf("%.0f", percent);
       System.out.print("% ");
 
       switch((int)percent) {
-         case 100: System.out.println("Great!"); break;
-         case 90: System.out.println("Pretty good"); break;
-         case 80: System.out.println("Not bad."); break;
-         case 70: System.out.println("meh"); break;
-         case 60: System.out.println("Not good"); break;
-         default: System.out.println("You failed");
+         case 100: System.out.println(", Great!"); break;
+         case 90: System.out.println(", Pretty good"); break;
+         case 80: System.out.println(", Not bad."); break;
+         case 70: System.out.println(", Okay."); break;
+         case 60: System.out.println(". Not good"); break;
+         default: System.out.println(", You failed");
    }
 }
 }
