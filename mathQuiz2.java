@@ -7,16 +7,7 @@ public class mathQuiz2 {
    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
       Random random = new Random();
-      /*
-       *  work in progress
-       *  issues to solve
-       * 1. response when user enters a non-numberic character ✅
-       * 2. fix division operation ✅
-       * 3. fix division by 0 ✅
-       * 4. add got out of ... score
-       * 5. profit?
-       * 
-       */
+
       double num1;
       double num2;
       double answer;
