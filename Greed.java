@@ -26,12 +26,12 @@ public class Greed
     public static void main(String[] args) 
     {
 
-        int[] roll2 = {5, 3, 3, 3, 4}; 
+        //int[] roll2 = {5, 3, 3, 3, 4}; 
         int[] roll = randomArray();
         
        // System.out.println("Array is: " + Arrays.toString(randomArray()));
-       System.out.println(Arrays.toString(randomArray()));
-       System.out.println("Score is: " + greedy(randomArray()));
+       System.out.println(Arrays.toString(roll));
+       System.out.println("Score is: " + greedy(roll));
 
     }
     public static int greedy(int[] dice) 
