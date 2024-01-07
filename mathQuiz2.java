@@ -28,7 +28,7 @@ public class mathQuiz2 {
             try{
                num1 = (int)random.nextInt(10);
                num2 = (int)random.nextInt(10);
-               String[] operator = {" + ", " - ", " * ", " ÷ "};
+               String[] operator = {" + ", " - ", " * ", " / "};
                String randOp = operator[(int) (Math.random() * operator.length)];
                System.out.print("\nQ." + questionNum + ": What is " + (int)num1 + randOp + (int)num2 +"? ");
                double userAns = input.nextDouble();               
