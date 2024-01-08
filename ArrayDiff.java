@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 public class ArrayDiff {
     public static void main(String[] blergs) {
         int[] one = {2, 2};
-        int[] two = {1, 2};
+        int[] two = {1, 2, 3};
         System.out.println(Arrays.toString(arrayDiff(one, two)));
     }
 

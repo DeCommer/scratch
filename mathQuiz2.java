@@ -20,7 +20,7 @@ public class mathQuiz2 {
       boolean tryAgain = true;
 
       System.out.println("*************************");
-      System.out.println("******* Math Quiz *******");
+      System.out.println("******* Welcome to Math Quiz *******");
       System.out.println("*************************");
 
       while(tryAgain) {
