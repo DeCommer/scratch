@@ -1,14 +1,21 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Beginagain{
     public static void main(String[] args){
 
-        // int num = 2;
-        // ++num;
-        // num++;
-        // System.out.println(num);
 
-        for(int i=1; i <= 10; i++) {
-            System.out.println(i);
-        }
+        //kilo to lb weight converter
+        Scanner input = new Scanner(System.in);
+        DecimalFormat f = new DecimalFormat("##.00");
+
+        double lb = 2.205;
+
+        System.out.print("Enter amount in kg: ");
+        double userKilo = input.nextDouble();
+        //input.nextLine();
+
+        System.out.println(userKilo + " Kilos is " + f.format(userKilo * lb) + " pounds.");
+        input.close();
     }
 }

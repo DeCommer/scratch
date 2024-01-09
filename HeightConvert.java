@@ -11,7 +11,7 @@ public class HeightConvert {
         //double height = 5.9;
         DecimalFormat f = new DecimalFormat("##.00");
 
-        System.out.println("------ Height convertor! ---------");
+        System.out.println("------ Height converter! ---------");
         System.out.println("Enter you height in either inches or centimeters to convert");
         System.out.print("For ft enter as decimal. ex: 5' 9 '' = 5.9: ");
         double height = input.nextDouble();
