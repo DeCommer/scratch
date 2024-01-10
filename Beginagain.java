@@ -15,7 +15,7 @@ public class Beginagain{
         double userKilo = input.nextDouble();
         //input.nextLine();
 
-        System.out.println(userKilo + " Kilos is " + f.format(userKilo * lb) + " pounds.");
+        System.out.println(userKilo + " Kilos is about " + f.format(userKilo * lb) + " pounds.");
         input.close();
     }
 }
