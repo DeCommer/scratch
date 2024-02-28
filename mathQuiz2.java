@@ -11,7 +11,7 @@ public class mathQuiz2 {
       Random random = new Random();
       double num1;
       double num2;
-      double zeroNumr;
+      // double zeroNumr;
       double answer;
       double percent = 0;
       int score = 0;
@@ -30,9 +30,9 @@ public class mathQuiz2 {
       while(tryAgain) {
          for(questionNum = 1; questionNum <= loopNum; questionNum++){ //Loops through questions
             try{
-               num1 = (int)random.nextInt(10); //chooses random first number
-               num2 = (int)random.nextInt(10); //chooses random second number
-               zeroNumr = (int)random.nextDouble(num2 - 1) + 1;
+               num1 = (int)random.nextInt(50); //chooses random first number
+               num2 = (int)random.nextInt(50); //chooses random second number
+               // zeroNumr = (int)random.nextDouble(num2 - 1) + 1;
                String[] operator = {" + ", " - ", " * ", " / "}; //Sets a string to loop over for choosing an operator
                String randOp = operator[(int) (Math.random() * operator.length)]; //Chooses a random operator from set
                System.out.print("\nQ." + questionNum + ": What is " + (int)num1 + randOp + (int)num2 +"? "); //Sets new
@@ -65,7 +65,7 @@ public class mathQuiz2 {
                      }  
                   }
                   else if(randOp.equals(" / ")) { //Division is a special case
-                     answer = (int) (num1 / zeroNumr); //Result is given by function below
+                     answer = (Double) (num1 / num2); //Result is given by function below
                      String ans2 = df.format(answer); //to truncate decimals
                      Double ans3 = Double.parseDouble(ans2); //if an answer is given as an int, this converts to double
                      if(userAns == ans3) { //Checking answer
@@ -112,7 +112,7 @@ public class mathQuiz2 {
       }
       return response;
    }
-   // public static Double div(double num1, double num2) {
+   // public static Double div(double num1, double num2) {  **fixed
    //    double divAnswer = num1 / num2;
    //    if(num2 == 0) {
    //       divAnswer = 0.00;
