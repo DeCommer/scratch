@@ -135,6 +135,6 @@ public class mathQuiz2 {
          case 70: System.out.println(", Okay."); break;
          case 60: System.out.println(", Barely passing."); break;
          default: System.out.println(", You failed");
+      }
    }
-}
 }
