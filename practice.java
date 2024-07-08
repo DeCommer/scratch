@@ -11,7 +11,7 @@ public class practice {
     public static int sumNums1(int n) {
         return n * (n + 1) / 2;
     }
-
+    //A different way to sum n numbers
     public static int sumNums(int n) {
         int sum = 0;
         for(int i = 1; i <= n; i++) {
